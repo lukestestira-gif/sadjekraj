@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="sr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#110f0d">
+  <meta name="color-scheme" content="dark">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Gavro Hairstyle | Loznica">
+  <meta property="og:description" content="Tvoj stil. Tvoj termin. Online zakazivanje za minut.">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <link rel="manifest" href="/manifest.webmanifest">
+  <link rel="apple-touch-icon" href="/icons/icon-192.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800&family=Cormorant+Garamond:ital,wght@1,600;1,700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+  <title>GAVRO HAIRSTYLE</title>
+  <meta name="description" content="Gavro Hairstyle, Loznica — frizerski salon, šišanje, fade i brada. Zakaži termin online ili pogledaj radove na Instagramu @hairstyle_by_gavro.">
+</head>
+<body>
+  <div class="grain"></div>
+  <header class="topbar">
+    <a href="#home" class="brand"><span class="brand-mark js-logo-mark">N</span><span id="brandName">GAVRO HAIRSTYLE</span></a>
+    <nav class="desktop-nav" aria-label="Glavna navigacija"><a href="#services">Usluge</a><a href="#works">Radovi</a><a href="#barbers">Tim</a><a href="#about">Studio</a></nav>
+    <div class="top-actions"><a class="book-pill" href="#booking">Zakaži <span>↗</span></a></div>
+  </header>
+
+  <main>
+    <section id="home" class="hero">
+      <div class="hero-photo" id="heroPhoto"></div>
+      <div class="hero-shade"></div>
+      <div id="mobileInstallBanner" class="mobile-install-banner">
+        <div class="mobile-install-icon js-logo-mark">N</div>
+        <div><small>BARBER APP</small><strong>Skini aplikaciju</strong><span>Zakazivanje direktno sa početnog ekrana.</span></div>
+        <button class="js-install" type="button">Instaliraj</button><button id="dismissInstallBanner" class="install-dismiss" type="button" aria-label="Sakrij preporuku za instaliranje">×</button>
+      </div>
+      <div class="hero-content shell">
+        <div class="hero-copy">
+          <div class="eyebrow"><i></i><span id="heroEyebrow">ONLINE ZAKAZIVANJE · GAVRO HAIRSTYLE</span></div>
+          <h1 id="heroTitle">Dobar fade se vidi. Dobar barber se pamti.</h1>
+          <p id="heroSubtitle"></p>
+          <div class="hero-actions"><a class="btn-primary" href="#booking"><span class="js-primary-cta">Zakaži termin</span> <span>↗</span></a><a class="btn-ghost" href="#works">Istraži naše radove <span aria-hidden="true">↗</span></a></div><div class="hero-guarantees"><span><i>✓</i> Transparentne cene</span><span><i>✓</i> Slobodni termini uživo</span><span><i>✓</i> Bez pozivanja</span></div>
+        </div>
+        <aside class="hero-info-card">
+          <span class="micro">BARBER EXPERIENCE</span>
+          <strong>Bez čekanja.</strong>
+          <p>Rezerviši tačno vreme i dođi kada je stolica spremna za tebe.</p>
+          <div><span id="openingHours"></span><span id="phone"></span></div>
+        </aside>
+      </div>
+      <div class="hero-marquee" aria-label="Barber stilovi"><div id="marqueeTrack" class="marquee-track"></div></div>
+    </section>
+
+    <div class="value-ribbon shell" aria-label="Prednosti rezervacije"><div><b>01</b><span><strong>Izaberi uslugu</strong><small>Cena i trajanje unapred</small></span></div><i></i><div><b>02</b><span><strong>Odaberi vreme</strong><small>Slobodni termini uživo</small></span></div><i></i><div><b>03</b><span><strong>Dođi opušteno</strong><small>Potvrda odmah na ekranu</small></span></div></div>
+
+    <section id="services" class="section shell">
+      <div class="section-title"><span>01 / USLUGE</span><div><h2 id="servicesTitle">Izaberi tretman.</h2><p id="servicesSubtitle">Jasna cena, vreme i slobodni termini. Bez poziva i čekanja.</p></div></div>
+      <div id="serviceGrid" class="service-grid"></div>
+    </section>
+
+    <section id="works" class="works-section">
+      <div class="shell section-title light"><span>02 / RADOVI</span><div><h2 id="worksTitle">Pravi radovi iz studija.</h2><p id="worksSubtitle">Video i fotografije direktno iz Gavrovog rada, uz Instagram objave sa profila @hairstyle_by_gavro.</p></div></div>
+      <div class="shell"><div id="galleryGrid" class="gallery-grid"></div>
+      <div class="featured-reel">
+        <div class="featured-reel-copy"><span class="ig-studio-kicker">ISTAKNUTI VIDEO</span><h3>Fade koji odmah prodaje kvalitet.</h3><p>Dodao sam tvoj dostavljeni video lokalno u sajt, tako da radi stabilno i bez oslanjanja na Instagram embed. Ispod su i direktni linkovi do objava sa profila.</p><div class="featured-reel-actions"><a class="ig-profile-link" href="https://www.instagram.com/hairstyle_by_gavro/p/Dblwri_kXOv/" target="_blank" rel="noopener noreferrer">Pogledaj originalni video <span>↗</span></a><a class="btn-ghost social-direct-link" href="https://www.instagram.com/hairstyle_by_gavro/" target="_blank" rel="noopener noreferrer">Instagram profil <span>↗</span></a></div></div>
+        <div class="featured-reel-player"><video controls playsinline preload="metadata" poster="/uploads/gavro-featured-reel-poster.jpg"><source src="/uploads/gavro-featured-reel.mp4" type="video/mp4"></video></div>
+      </div>
+      <div class="ig-studio-header"><span class="ig-studio-kicker">DIREKTNO SA PROFILA</span><a class="ig-profile-link" href="https://www.instagram.com/hairstyle_by_gavro/" target="_blank" rel="noopener noreferrer" aria-label="Pogledaj Instagram profil Gavro Hairstyle">◎ @hairstyle_by_gavro <span>↗</span></a></div>
+      <div class="social-proof-grid" aria-label="Izdvojene Instagram objave salona Gavro Hairstyle">
+        <article class="social-card"><span class="social-card-tag">OBJAVA / VIDEO</span><h3>Dblwri_kXOv</h3><p>Tvoj poslati video je ugrađen iznad kao lokalni prikaz, a ovde ostaje i direktan link ka originalnoj Instagram objavi.</p><a class="social-card-link" href="https://www.instagram.com/hairstyle_by_gavro/p/Dblwri_kXOv/" target="_blank" rel="noopener noreferrer">Otvori objavu na Instagramu <span>↗</span></a></article>
+        <article class="social-card social-card-embed"><div class="ig-post-top"><span class="ig-icon">◎</span><div><b>Gavro Hairstyle</b><small>@hairstyle_by_gavro · Instagram fotografije</small></div></div><iframe title="Instagram fotografije Gavro Hairstyle" src="https://www.instagram.com/p/DLVC9ChNF4G/embed/" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allowtransparency="true"></iframe><a class="social-card-link" href="https://www.instagram.com/hairstyle_by_gavro/p/DLVC9ChNF4G/" target="_blank" rel="noopener noreferrer">Otvori originalne slike na Instagramu <span>↗</span></a></article>
+      </div><p class="ig-disclaimer">Napomena: Instagram ponekad ograniči ugrađeni prikaz. Zato je video dodat i kao lokalni fajl, a uz svaku objavu postoji direktan link.</p></div>
+    </section>
+
+    <section id="barbers" class="section shell">
+      <div class="section-title"><span>03 / TIM</span><div><h2 id="barbersTitle">Izaberi svog barbera.</h2><p id="barbersSubtitle">Svaki barber ima svoj raspored i svoj stil.</p></div></div>
+      <div id="barberGrid" class="barber-grid"></div>
+    </section>
+
+    <section id="booking" class="booking-section">
+      <div class="shell booking-heading"><span>04 / REZERVACIJA</span><h2 id="bookingTitle">Stolica čeka. Izaberi vreme.</h2><p id="bookingSubtitle">Prikazujemo samo termine koji su stvarno slobodni kod izabranog barbera.</p></div>
+      <div class="shell booking-shell">
+        <div class="booking-progress">
+          <button class="progress-step active" data-go="1"><span>1</span><b>Usluga</b></button>
+          <i></i><button class="progress-step" data-go="2"><span>2</span><b>Barber</b></button>
+          <i></i><button class="progress-step" data-go="3"><span>3</span><b>Termin</b></button>
+          <i></i><button class="progress-step" data-go="4"><span>4</span><b>Potvrda</b></button>
+        </div>
+
+        <div class="booking-layout">
+          <div class="booking-main">
+            <section class="booking-step-panel active" data-step="1">
+              <div class="booking-panel-head"><span>01</span><div><h3>Šta radimo?</h3><p>Izaberi jednu uslugu.</p></div></div>
+              <div id="bookingServices" class="choice-grid service-choice-grid"></div>
+              <div class="wizard-actions right"><button class="wizard-next" data-next="2" disabled>Nastavi <span>→</span></button></div>
+            </section>
+
+            <section class="booking-step-panel" data-step="2">
+              <div class="booking-panel-head"><span>02</span><div><h3>Ko te šiša?</h3><p>Izaberi barbera ili prvi slobodan.</p></div></div>
+              <div id="bookingBarbers" class="choice-grid barber-choice-grid"></div>
+              <div class="wizard-actions"><button class="wizard-back" data-back="1">← Nazad</button><button class="wizard-next" data-next="3" disabled>Nastavi <span>→</span></button></div>
+            </section>
+
+            <section class="booking-step-panel" data-step="3">
+              <div class="booking-panel-head"><span>03</span><div><h3>Kada dolaziš?</h3><p>Zauzeti termini se ne prikazuju.</p></div></div>
+              <div class="date-picker-head"><strong>Datum</strong><label class="calendar-field">📅 <input id="dateInput" type="date" aria-label="Datum termina"></label></div>
+              <div class="smart-availability"><div><span class="smart-spark">✦</span><div><strong>Najbrži slobodni termini</strong><small>Pronađi dostupna vremena jednim klikom.</small></div></div><button id="findFastSlots" type="button">Pronađi ↗</button></div><div id="fastSlotResults" class="fast-slot-results hidden" aria-live="polite"></div>
+              <div id="dateStrip" class="date-strip"></div>
+              <div class="slot-section"><div class="slot-head"><strong>Slobodno vreme</strong><span id="slotMeta"></span></div><div id="slotState" class="slot-state">Izaberi datum.</div><div id="timeSlots" class="time-groups"></div></div>
+              <div class="wizard-actions"><button class="wizard-back" data-back="2">← Nazad</button><button class="wizard-next" data-next="4" disabled>Nastavi <span>→</span></button></div>
+            </section>
+
+            <section class="booking-step-panel" data-step="4">
+              <div class="booking-panel-head"><span>04</span><div><h3>Potvrdi termin.</h3><p>Još ime i telefon.</p></div></div>
+              <form id="bookingForm" class="details-form">
+                <div class="two-col"><label>Ime i prezime<input id="nameInput" autocomplete="name" placeholder="Marko Marković" required></label><label>Telefon<input id="phoneInput" autocomplete="tel" inputmode="tel" placeholder="+381 6x xxx xxxx" required></label></div>
+                <label>Napomena <small>opciono</small><textarea id="noteInput" rows="4" placeholder="Npr. low fade, samo makaze gore..."></textarea></label>
+                <label class="consent"><input id="consentInput" type="checkbox" required><span>Potvrđujem termin i upoznat/a sam sa <a href="/privatnost.html" target="_blank" rel="noopener">obaveštenjem o privatnosti</a>.</span></label><p class="privacy-note">Nema online naplate. Plaćaš u salonu. Nakon potvrde termini su vidljivi osoblju salona.</p>
+                <input type="text" name="website" tabindex="-1" aria-hidden="true" autocomplete="off" class="honeypot"><p class="form-msg" id="formMsg"></p>
+                <div class="wizard-actions"><button class="wizard-back" type="button" data-back="3">← Nazad</button><button class="confirm-btn" type="submit">Rezerviši termin <span>↗</span></button></div>
+              </form>
+            </section>
+          </div>
+
+          <aside class="booking-summary-card">
+            <div class="summary-top"><span>TVOJ TERMIN</span><b id="summaryReady">Nije završeno</b></div>
+            <div class="summary-empty" id="summaryEmpty">Prvo izaberi uslugu.</div>
+            <div id="summaryContent" class="summary-content hidden">
+              <div class="summary-service"><div class="summary-icon">✂</div><div><small>USLUGA</small><strong id="summaryService">—</strong><span id="summaryDuration">—</span></div></div>
+              <div class="summary-row"><span>Barber</span><strong id="summaryBarber">—</strong></div>
+              <div class="summary-row"><span>Datum</span><strong id="summaryDate">—</strong></div>
+              <div class="summary-row"><span>Vreme</span><strong id="summaryTime">—</strong></div>
+              <div class="summary-total"><span>Ukupno</span><strong id="summaryPrice">—</strong></div>
+            </div>
+            <p class="summary-note">Termin se čuva tek kada klikneš „Rezerviši termin“.</p>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="app-section shell">
+      <div class="app-copy"><span>06 / APLIKACIJA</span><h2 id="appTitle">GAVRO u džepu.</h2><p id="appText"></p><button class="btn-primary js-install">↓ Skini aplikaciju</button><small>Radi kao PWA · Android / iPhone · bez App Store-a</small></div>
+      <div class="phone-stage"><div class="phone"><div class="phone-notch"></div><div class="phone-screen"><div class="phone-brand js-logo-mark">N</div><span>GAVRO HAIRSTYLE</span><strong>Zakaži za<br>30 sekundi.</strong><div class="phone-slot">DANAS <b>15:30</b></div><div class="phone-slot">SUTRA <b>10:15</b></div><div class="phone-cta">ZAKAŽI ↗</div></div></div><div class="phone-glow"></div></div>
+    </section>
+
+
+    <section id="trust" class="trust-section">
+      <div class="shell">
+        <div class="section-title"><span>07 / ISKUSTVO</span><div><h2>Zašto klijenti biraju nas.</h2><p>Jednostavno zakazivanje, profesionalan rezultat i bez čekanja.</p></div></div>
+        <div class="trust-grid">
+          <article><strong>✓</strong><h3>Online rezervacija</h3><p>Izaberi uslugu, barbera i termin za manje od jednog minuta.</p></article>
+          <article><strong>✂</strong><h3>Premium usluga</h3><p>Precizni rezovi, fade i brada sa fokusom na detalje.</p></article>
+          <article><strong>★</strong><h3>Bez gubljenja vremena</h3><p>Dolaziš kada je tvoja stolica spremna.</p></article>
+        </div>
+        <div class="review-box"><div class="review-ornament">“</div><p>Precizan stil počinje dobrom uslugom — od prve rezervacije do poslednjeg detalja.</p><span>GAVRO HAIRSTYLE / NAŠ PRISTUP</span></div>
+      </div>
+    </section>
+
+    <section id="faq" class="faq-section shell"><div class="section-title"><span>08 / FAQ</span><div><h2>Imaš pitanje?</h2><p>Sve što treba da znaš pre dolaska.</p></div></div><div class="faq-list">
+      <details><summary><span>01</span> Da li moram da platim online? <b>+</b></summary><p>Ne. Rezervacija je besplatna i plaćaš direktno u salonu nakon tretmana.</p></details>
+      <details><summary><span>02</span> Šta ako ne mogu da dođem? <b>+</b></summary><p>Ako ti se plan promeni, pozovi salon direktno. Osoblje salona uređuje rezervacije kroz admin panel.</p></details>
+      <details><summary><span>03</span> Kako znam da je termin potvrđen? <b>+</b></summary><p>Odmah nakon slanja rezervacije vidiš potvrdu sa datumom, vremenom, barberom i uslugom.</p></details>
+      <details><summary><span>04</span> Mogu li da izaberem barbera? <b>+</b></summary><p>Da. Izaberi željenog barbera ili opciju „Prvi slobodan“, ako u timu radi više frizera.</p></details>
+    </div></section>
+
+    <section id="about" class="about-section"><div class="shell about-grid"><div><span>06 / O NAMA</span><h2 id="aboutTitle"></h2></div><div><p id="aboutText"></p><div class="about-meta"><div><small>ADRESA</small><strong id="address"></strong></div><div><small>INSTAGRAM</small><a id="instagram" href="https://www.instagram.com/hairstyle_by_gavro/" target="_blank" rel="noopener noreferrer">@hairstyle_by_gavro ↗</a></div></div></div></div></section>
+<section class="location-section"><div class="shell"><div class="panel-location"><div><span>LOKACIJA</span><h2>Pronađi nas</h2><p id="mapAddress"></p><div class="location-actions"><a id="mapsBtn" target="_blank" rel="noopener">Google Maps</a><a id="reviewBtn" target="_blank" rel="noopener">Ostavi Google recenziju ⭐</a></div></div><iframe id="googleMapFrame" loading="lazy" allowfullscreen></iframe></div></div></section>
+  </main>
+
+  <footer class="footer shell"><div class="brand"><span class="brand-mark js-logo-mark">N</span><span id="footerName">GAVRO HAIRSTYLE</span></div><p id="footerText">Rezervacija bez čekanja. Stil bez kompromisa.</p><div><a href="#booking">Zakaži</a><a href="#faq">Pitanja</a><a href="/privatnost.html">Privatnost</a><a href="/admin">Admin</a></div></footer>
+
+  <nav class="mobile-nav"><a href="#home"><span>⌂</span>Početna</a><a href="#works"><span>▦</span>Radovi</a><a href="#booking" class="mobile-book"><span>✂</span>Zakaži</a><a href="#faq"><span>?</span>Pitanja</a></nav>
+
+  <div id="successModal" class="modal-layer hidden" role="dialog" aria-modal="true" aria-labelledby="successHeading"><div class="success-card"><div class="success-check">✓</div><span>REZERVACIJA JE USPEŠNA</span><h3 id="successHeading">Termin je sačuvan.</h3><p id="successText"></p><div id="successDetails" class="success-details"></div><p class="success-help">Ako želiš izmenu termina, javi se salonu direktno telefonom ili preko Instagrama.</p><div class="success-note"><small>KONTAKT SALONA</small><a id="successPhoneLink" href="tel:+381621892596">Pozovi salon ↗</a></div><div class="success-actions"><button id="successClose" type="button" class="btn-primary">Završi <span>✓</span></button></div></div></div>
+  <div id="installModal" class="modal-layer hidden"><div class="install-card"><button class="modal-x" id="installClose">×</button><div class="app-icon js-logo-mark">N</div><span>GAVRO APP</span><h3>Dodaj na početni ekran.</h3><p id="installHelp">Ako browser ne pokaže automatsku instalaciju, otvori meni browsera i izaberi „Add to Home Screen“ / „Install app“.</p><button class="btn-primary" id="installTry">Instaliraj</button></div></div>
+  <div id="lightbox" class="modal-layer hidden"><button class="lightbox-close" id="lightboxClose">×</button><img id="lightboxImage" alt="Barber rad"><div><strong id="lightboxTitle"></strong><span id="lightboxMeta"></span></div></div>
+
+  <script src="/app.js"></script>
+</body>
+</html>

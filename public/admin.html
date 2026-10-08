@@ -1,0 +1,87 @@
+<!doctype html><html lang="sr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#100e0c"><meta name="robots" content="noindex,nofollow"><title>GAVRO Admin</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet"><link rel="stylesheet" href="/admin.css?v=14"></head><body>
+<div id="loginView" class="login-view"><form id="loginForm" class="login-card"><div class="login-logo">N</div><span>GAVRO CONTROL</span><h1>Admin panel</h1><p>Raspored, tim, galerija i ceo sajt na jednom mestu.</p><label>Username<input id="loginUser" value="admin" autocomplete="username"></label><label>Lozinka<input id="loginPass" type="password" placeholder="••••••••" autocomplete="current-password"></label><button class="primary">Prijavi se →</button><b id="loginMsg"></b><a href="/">← Nazad na sajt</a></form></div>
+<div id="passwordSetupView" class="login-view hidden"><form id="passwordSetupForm" class="login-card"><div class="login-logo">N</div><span>ZAŠTITA NALOGA</span><h1>Postavi lozinku</h1><p>Pre prvog ulaska promeni početnu lozinku. Koristi najmanje 12 znakova.</p><label>Nova lozinka<input id="setupPassword" type="password" minlength="12" autocomplete="new-password" required></label><label>Ponovi novu lozinku<input id="setupPasswordConfirm" type="password" minlength="12" autocomplete="new-password" required></label><button class="primary">Sačuvaj lozinku</button><b id="passwordSetupMsg"></b><button type="button" class="login-back" id="setupLogout">Odustani i odjavi se</button></form></div>
+<div id="app" class="app hidden">
+  <aside><div class="aside-brand"><div class="mini-logo">N</div><div><strong>GAVRO</strong><span>CONTROL CENTER</span></div></div><nav><button class="nav-btn active" data-tab="dashboard"><i>▦</i><span>Dashboard</span></button><button class="nav-btn" data-tab="calendar"><i>◫</i><span>Kalendar</span></button><button class="nav-btn" data-tab="bookings"><i>◷</i><span>Zakazivanja</span></button><button class="nav-btn" data-tab="services"><i>✂</i><span>Usluge</span></button><button class="nav-btn" data-tab="barbers"><i>♟</i><span>Barberi</span></button><button class="nav-btn" data-tab="gallery"><i>▧</i><span>Galerija</span></button><button class="nav-btn" data-tab="blackouts"><i>◌</i><span>Neradni dani</span></button><button class="nav-btn" data-tab="site"><i>⚙</i><span>Uredi sajt</span></button></nav><div class="aside-bottom"><a href="/" target="_blank">↗ Otvori sajt</a><button id="logoutBtn">Odjavi se</button></div></aside>
+  <main><header><div><p>ADMIN / <span id="crumb">DASHBOARD</span></p><h1 id="pageTitle">Dashboard</h1></div><div class="header-actions"><span id="today"></span><button class="primary" id="headerNewBooking">+ Novi termin</button></div></header>
+
+  <section id="dashboard" class="tab active">
+    <div class="metric-grid"><article><small>DANAS</small><span>Zakazano</span><strong id="mToday">0</strong><i>termina</i></article><article><small>UKUPNO</small><span>Rezervacije</span><strong id="mTotal">0</strong><i>sve vreme</i></article><article><small>OVAJ MESEC</small><span>Prihod</span><strong id="mMonth">0</strong><i>završeni termini</i></article><article><small>OVAJ MESEC</small><span>Profit</span><strong id="mProfit">0</strong><i>prihod − trošak</i></article><article><small>POPULARNO</small><span>Najtraženije</span><strong id="mTopService">—</strong><i>usluga</i></article></div>
+    <div class="panel security-panel"><div class="panel-head"><div><span>PODACI I NALOG</span><h2>Bezbednost</h2><p>Preuzmi kopiju salona ili promeni administratorsku lozinku.</p></div><a class="primary backup-link" href="/api/admin/backup">Preuzmi backup</a></div><form id="passwordChangeForm" class="security-password-form"><label>Trenutna lozinka<input id="currentPassword" type="password" autocomplete="current-password" required></label><label>Nova lozinka<input id="newPassword" type="password" minlength="12" autocomplete="new-password" required></label><button class="ghost">Promeni lozinku</button><p id="passwordChangeMsg" role="status"></p></form><p id="passwordManagedMsg" class="password-managed hidden">Lozinka se podešava kroz serversku ADMIN_PASS konfiguraciju.</p></div>
+    <div class="dash-grid"><div class="panel"><div class="panel-head"><div><span>DANAS</span><h2>Raspored</h2></div><button onclick="switchTab('calendar')">Kalendar →</button></div><div id="todaySchedule"></div></div><div class="panel quick-panel"><div class="panel-head"><div><span>BRZE AKCIJE</span><h2>Šta radiš?</h2></div></div><button id="dashNewBooking">+ Dodaj termin</button><button onclick="switchTab('gallery')">▧ Dodaj fade sliku</button><button onclick="switchTab('barbers')">♟ Dodaj barbera</button><button onclick="switchTab('site')">⚙ Promeni naslov / hero</button></div></div>
+    <div class="panel mt occupancy-panel"><div class="panel-head"><div><span>PREGLED POSLOVANJA</span><h2>Rezervacije po danima</h2><p>Broj aktivnih termina u poslednjih sedam dana.</p></div><span class="subtle-chip">POSLEDNJIH 7 DANA</span></div><div id="bookingActivity" class="activity-chart"></div></div>
+    <div class="panel mt"><div class="panel-head"><div><span>NAJNOVIJE</span><h2>Zakazivanja</h2></div><button onclick="switchTab('bookings')">Prikaži sve →</button></div><div id="recentBookings"></div></div>
+  </section>
+
+  <section id="calendar" class="tab"><div class="panel calendar-panel"><div class="calendar-toolbar"><div><span>KALENDAR</span><h2>Dnevni raspored</h2><p>Klikni na prazno vreme da napraviš termin.</p></div><div class="cal-actions"><span class="live-pill"><i></i> UŽIVO</span><button id="prevDay" class="ghost">←</button><button id="todayBtn" class="ghost">Danas</button><input id="calendarDate" type="date"><button id="nextDay" class="ghost">→</button><button id="newBooking" class="primary">+ Termin</button></div></div><div id="barberLegend" class="barber-legend"></div><div id="calendarGrid" class="calendar-grid-wrap"></div></div></section>
+
+  <section id="bookings" class="tab"><div class="panel"><div class="panel-head split-mobile"><div><span>BOOKINGS</span><h2>Sva zakazivanja</h2></div><div class="filters"><button id="exportBookings" class="ghost" type="button">↓ CSV izvoz</button><input id="bookingSearch" placeholder="Ime, telefon, usluga..."><select id="statusFilter"><option value="">Svi statusi</option><option value="pending">Na čekanju</option><option value="confirmed">Potvrđeno</option><option value="completed">Završeno</option><option value="cancelled">Otkazano</option></select></div></div><div id="allBookings"></div></div></section>
+
+  <section id="services" class="tab"><div class="panel"><div class="panel-head"><div><span>USLUGE</span><h2>Cene i trajanje</h2></div><button class="primary" id="addService">+ Nova usluga</button></div><div id="serviceAdmin" class="cards"></div></div></section>
+  <section id="barbers" class="tab"><div class="panel"><div class="panel-head"><div><span>TIM</span><h2>Barberi</h2><p>Fotografija, boja kalendara, smena i radni dani.</p></div><button class="primary" id="addBarber">+ Novi barber</button></div><div id="barberAdmin" class="barber-admin-grid"></div></div></section>
+  <section id="gallery" class="tab"><div class="panel"><div class="panel-head"><div><span>RADOVI</span><h2>Fade galerija</h2><p>Uploaduj slike direktno sa telefona. JPG / PNG / WEBP do 6 MB.</p></div><button class="primary" id="addGallery">+ Dodaj sliku</button></div><div id="galleryAdmin" class="gallery-admin-grid"></div></div></section>
+
+  <section id="blackouts" class="tab"><div class="panel blackout-panel"><div class="panel-head"><div><span>RASPORED / ODSUSTVA</span><h2>Neradni dani i odmori</h2><p>Blokiraj slobodne termine za ceo salon ili određenog barbera. Postojeće rezervacije ostaju vidljive da ih ručno pomeriš.</p></div></div>
+  <form id="blackoutForm" class="blackout-form"><label>Od datuma<input name="dateFrom" type="date" required></label><label>Do datuma<input name="dateTo" type="date" required></label><label>Za koga?<select name="barberId" id="blackoutBarber"><option value="">Ceo salon</option></select></label><label>Razlog<input name="reason" maxlength="120" placeholder="Godišnji odmor / praznik"></label><button class="primary" type="submit">+ Blokiraj dane</button></form><p id="blackoutMessage" role="status"></p><div id="blackoutList" class="blackout-list"></div></div></section>
+
+  <section id="site" class="tab">
+    <form id="settingsForm" class="panel form-panel site-editor-panel">
+      <div class="panel-head"><div><span>SAJT</span><h2>Uredi ceo sajt</h2><p>Logo, slike, naslovi, traka, kontakt i tekstovi — bez menjanja koda.</p></div><button class="primary">Sačuvaj izmene</button></div>
+      <div class="site-editor-grid v5-editor">
+        <div class="form-grid site-fields">
+          <div class="editor-group-title wide"><span>01</span><div><strong>Brend i kontakt</strong><small>Osnovni podaci koji se prikazuju kroz ceo sajt.</small></div></div>
+          <label>Naziv salona<input name="salonName"></label><label>Telefon<input name="phone"></label>
+          <label>Instagram<input name="instagram" placeholder="@profil"></label><label>TikTok<input name="tiktok" placeholder="@profil"></label>
+          <label class="wide">Adresa<input name="address"></label>
+          <label class="wide">Google Maps link<input name="googleMapsUrl" placeholder="https://maps.google.com/..."></label>
+          <label class="wide">Google Reviews link<input name="googleReviewUrl" placeholder="Link za ostavljanje recenzije"></label>
+          <label class="wide">Google Maps Embed kod/URL<input name="googleMapsEmbed" placeholder="Iframe src ili embed link"></label>
+          <label>Akcent boja<input type="color" name="accent"></label><label>Valuta<input name="currency"></label>
+          <label class="wide">Radno vreme<input name="openingHours"></label>
+
+          <div class="editor-group-title wide"><span>02</span><div><strong>Prvi ekran</strong><small>Hero naslov, dugme i pokretna barber traka.</small></div></div>
+          <label class="wide">Mali tekst iznad naslova<input name="heroEyebrow" placeholder="ONLINE ZAKAZIVANJE · GAVRO HAIRSTYLE"></label>
+          <label class="wide">Glavni naslov<input name="heroTitle"></label>
+          <label class="wide">Podnaslov<textarea name="heroSubtitle" rows="3"></textarea></label>
+          <label>Tekst glavnog dugmeta<input name="primaryCtaText" placeholder="Zakaži termin"></label>
+          <label class="wide">Pokretna traka <small>odvoji stavke znakom |</small><input name="marqueeText" placeholder="FRESH FADE|MID FADE|LOW FADE|TAPER"></label>
+
+          <div class="editor-group-title wide"><span>03</span><div><strong>Naslovi sekcija</strong><small>Promeni tekstove bez ulaska u HTML.</small></div></div>
+          <label>Naslov usluga<input name="servicesTitle"></label><label>Naslov radova<input name="worksTitle"></label>
+          <label class="wide">Opis usluga<input name="servicesSubtitle"></label><label class="wide">Opis radova<input name="worksSubtitle"></label>
+          <label>Naslov barbera<input name="barbersTitle"></label><label>Naslov zakazivanja<input name="bookingTitle"></label>
+          <label class="wide">Opis barbera<input name="barbersSubtitle"></label><label class="wide">Opis zakazivanja<input name="bookingSubtitle"></label>
+
+          <div class="editor-group-title wide"><span>04</span><div><strong>O nama i aplikacija</strong><small>Donji deo sajta i PWA poruka.</small></div></div>
+          <label class="wide">Naslov O nama<input name="aboutTitle"></label>
+          <label class="wide">Tekst O nama<textarea name="aboutText" rows="4"></textarea></label>
+          <label class="wide">Naslov aplikacije<input name="appTitle"></label>
+          <label class="wide">Tekst aplikacije<textarea name="appText" rows="3"></textarea></label>
+          <label class="wide">Footer tekst<input name="footerText"></label>
+        </div>
+
+        <div class="media-editor-stack">
+          <div class="image-editor media-card">
+            <span>LOGO SALONA</span>
+            <div class="logo-preview" id="logoPreview"><span>N</span></div>
+            <input type="hidden" name="logoImage">
+            <label class="upload-btn">📷 Izaberi logo<input id="logoUpload" type="file" accept="image/jpeg,image/png,image/webp" hidden></label>
+            <small>Najbolje PNG/WEBP sa providnom pozadinom. Prikazuje se u headeru, footeru i app kartici.</small>
+          </div>
+          <div class="image-editor media-card">
+            <span>HERO FOTOGRAFIJA</span>
+            <div class="image-preview hero-preview" id="heroPreview"></div>
+            <input type="hidden" name="heroImage">
+            <label class="upload-btn">📷 Izaberi novu hero sliku<input id="heroUpload" type="file" accept="image/jpeg,image/png,image/webp" hidden></label>
+            <small>Najbolje horizontalna fotografija 1600×1000 ili veća.</small>
+          </div>
+          <div class="editor-tip"><strong>💡 Sve slike možeš ubaciti sa telefona.</strong><p>Fotografije barbera menjaš u „Barberi“, a fade radove u „Galerija“.</p></div>
+        </div>
+      </div>
+      <p id="settingsMsg"></p>
+    </form>
+  </section>
+  </main>
+</div>
+<div id="modal" class="modal hidden"><form id="modalForm" class="modal-card"><div class="modal-head"><div><span id="modalKicker">UREDI</span><h2 id="modalTitle"></h2></div><button type="button" id="closeModal">×</button></div><div id="modalFields"></div><div id="modalError" class="modal-error"></div><button type="button" id="deleteModalBooking" class="delete-booking-btn hidden">Obriši termin</button><button class="primary wide-btn" type="submit">Sačuvaj izmene</button></form></div>
+<script src="/admin.js?v=netlify-17"></script></body></html>

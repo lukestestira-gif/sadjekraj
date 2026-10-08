@@ -1,0 +1,4 @@
+Prvo pročitajte NETLIFY-UPUTSTVO.md.
+Samo Netlify Drop nije dovoljan za admin i rezervacije.
+Objavite ceo projekat preko Git-a ili Netlify CLI-ja sa funkcijama.
+Podesite DATABASE_URL i ADMIN_PASS (najmanje 16 znakova), pa ponovite deploy.

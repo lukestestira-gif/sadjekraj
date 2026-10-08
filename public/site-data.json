@@ -1,0 +1,114 @@
+{
+  "settings": {
+    "salonName": "Gavro Hairstyle",
+    "heroTitle": "Fresh fade. Precizan detalj. Gavrov potpis.",
+    "heroSubtitle": "Moderno online zakazivanje za Gavro Hairstyle u Loznici. Pogledaj stvarne radove, izaberi uslugu i rezerviši svoj termin bez čekanja.",
+    "phone": "+381 62 1892596",
+    "address": "Jovana Cvijića 25, Loznica",
+    "instagram": "https://www.instagram.com/hairstyle_by_gavro/",
+    "accent": "#d8a45d",
+    "currency": "RSD",
+    "openingHours": "Pon–Pet 09:00–18:00 · Subota 09:00–16:00 · Nedelja zatvoreno",
+    "aboutTitle": "Gavro Hairstyle. Tvoj stil, tvoj termin.",
+    "aboutText": "Gavro Hairstyle je moderan frizerski studio u Loznici sa fokusom na clean fade, uredne linije i online zakazivanje bez čekanja. Jednostavno izaberi uslugu, termin i dođi spreman.",
+    "heroImage": "/uploads/gavro-featured-reel-poster.jpg",
+    "appTitle": "Gavro Hairstyle u džepu.",
+    "appText": "Zakazivanje termina online bez čekanja.",
+    "logoImage": "",
+    "heroEyebrow": "GAVRO HAIRSTYLE · LOZNICA",
+    "marqueeText": "FRESH FADE|MID FADE|LOW FADE|SKIN FADE|TAPER|BURST FADE|BEARD|CLEAN LINES",
+    "primaryCtaText": "Zakaži termin",
+    "servicesTitle": "Izaberi tretman.",
+    "servicesSubtitle": "Jasna cena, vreme i slobodni termini. Bez poziva i čekanja.",
+    "worksTitle": "Pravi radovi iz studija.",
+    "worksSubtitle": "Video i fotografije direktno iz Gavrovog rada, uz Instagram objave sa profila @hairstyle_by_gavro.",
+    "barbersTitle": "Upoznaj Gavra.",
+    "barbersSubtitle": "Rezerviši termin direktno kod Gavra.",
+    "bookingTitle": "Stolica čeka. Izaberi vreme.",
+    "bookingSubtitle": "Prikazujemo samo termine koji su stvarno slobodni kod izabranog barbera.",
+    "footerText": "Gavro Hairstyle · Loznica · Premium online zakazivanje.",
+    "tiktok": "",
+    "googleReviewUrl": "",
+    "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=Gavro+Hair+Style+Jovana+Cviji%C4%87a+25+Loznica",
+    "googleMapsEmbed": "https://www.google.com/maps?q=Gavro+Hair+Style+Jovana+Cviji%C4%87a+25+Loznica&output=embed"
+  },
+  "services": [
+    {
+      "id": "svc_hair",
+      "name": "Šišanje",
+      "description": "Konsultacija, šišanje i styling.",
+      "duration": 45,
+      "price": 1500,
+      "active": true
+    },
+    {
+      "id": "svc_fade",
+      "name": "Skin Fade",
+      "description": "Precizan fade sa završnim stylingom.",
+      "duration": 50,
+      "price": 1800,
+      "active": true
+    },
+    {
+      "id": "svc_beard",
+      "name": "Brada",
+      "description": "Oblikovanje, konture i završna nega.",
+      "duration": 30,
+      "price": 1000,
+      "active": true
+    },
+    {
+      "id": "svc_combo",
+      "name": "Hair + Beard",
+      "description": "Kompletan tretman kose i brade.",
+      "duration": 75,
+      "price": 2400,
+      "active": true
+    }
+  ],
+  "barbers": [
+    {
+      "id": "barber_gavro",
+      "name": "Gavro",
+      "role": "Barber",
+      "initials": "GV",
+      "color": "#d8a45d",
+      "workStart": "09:00",
+      "workEnd": "18:00",
+      "workDays": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "active": true,
+      "bio": "Gavro Hairstyle · Loznica",
+      "photo": ""
+    }
+  ],
+  "gallery": [
+    {
+      "id": "g1",
+      "barberId": "barber_gavro",
+      "title": "Skin fade / levi profil",
+      "image": "/uploads/frame-1.jpg",
+      "active": true
+    },
+    {
+      "id": "g2",
+      "barberId": "barber_gavro",
+      "title": "Fade / zadnji prelaz",
+      "image": "/uploads/frame-4.jpg",
+      "active": true
+    },
+    {
+      "id": "g3",
+      "barberId": "barber_gavro",
+      "title": "Fade / desni profil",
+      "image": "/uploads/frame-8.jpg",
+      "active": true
+    }
+  ]
+}

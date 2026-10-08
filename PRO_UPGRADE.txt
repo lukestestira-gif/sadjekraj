@@ -1,0 +1,1 @@
+GAVRO Premium v14 — stabilna admin prijava (bez starog hash-a), npm run reset-admin, samo zakazivanje za klijente, bez Moj termin i kalendar opcija, osvežena tipografija. Detalji u README.md.

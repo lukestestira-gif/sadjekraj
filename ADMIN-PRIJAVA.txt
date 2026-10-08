@@ -1,0 +1,24 @@
+NETLIFY: prijava koristi ADMIN_USER i ADMIN_PASS iz Netlify Environment variables. ADMIN_PASS mora imati najmanje 16 znakova. Posle promene ponovite deploy.
+Pročitajte NETLIFY-UPUTSTVO.md.
+
+Sledeća ranija uputstva odnose se samo na lokalni Node server:
+
+GAVRO Premium v14 - ADMIN PRIJAVA
+================================
+Pokreni: npm start
+Otvori: http://localhost:3000/admin
+
+Na NOVOJ instalaciji (bez ADMIN_PASS u server okruzenju):
+Korisnik: admin
+Privremena sifra: Barber123!
+
+Pri prvoj prijavi odmah ces postaviti novu sifru (najmanje 12 znakova).
+
+AKO NE PRIHVATA SIFRU:
+1. Zaustavi server.
+2. Pokreni: npm run reset-admin
+3. Ponovo pokreni: npm start
+4. Prijavi se sa admin / Barber123! i odmah promeni sifru.
+
+Reset NE BRISE rezervacije ili podesavanja salona.
+Ako ADMIN_PASS dolazi iz hostinga ili Docker .env, ta vrednost ima prednost - promeni je tamo.

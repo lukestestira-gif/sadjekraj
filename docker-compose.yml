@@ -1,0 +1,17 @@
+services:
+  barber:
+    build: .
+    restart: unless-stopped
+    ports:
+      - "${PORT:-3000}:3000"
+    environment:
+      NODE_ENV: production
+      ADMIN_USER: ${ADMIN_USER:-admin}
+      ADMIN_PASS: ${ADMIN_PASS:?Postavi jaku ADMIN_PASS lozinku u .env fajl}
+      SALON_TIME_ZONE: ${SALON_TIME_ZONE:-Europe/Belgrade}
+    volumes:
+      - barber_data:/app/data
+      - barber_uploads:/app/public/uploads
+volumes:
+  barber_data:
+  barber_uploads:
